@@ -1,0 +1,156 @@
+.slider-staff {
+    width: 100%;
+    padding-top: 5rem; // отступ задаем в каждом проекте свой по необходимости
+
+    // флексовый блок обертка слайдеров
+    &__block {
+        //для слайдера во флексовом блоке
+        min-width: 0;
+        @media (min-width: 1320px) {
+            width: 100%;
+            min-width: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        h3 {
+            // какой-то загаловок над слайдером если он нужен
+            margin-bottom: 1.5rem;
+            @media (min-width: 1320px) {
+                margin-bottom: 3.1rem;
+            }
+        }
+    }
+}
+//
+
+.staff-swiper.swiper-container {
+    z-index: 0; // меняем по необходимости на весю обертку слайдера
+    margin-bottom: 0;
+}
+
+.staff-swiper {
+    background: #ffffff; // цвет для всей обертки одного слайдера
+    border-radius: 5px;
+    width: 100%;
+    max-width: 59.6rem;
+    border: 1px solid #f2f2f2; // бордер слайдера
+
+    &__slide {
+        // стили для каждого СЛАЙДА
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        box-sizing: border-box;
+        border-left: none;
+        text-align: left;
+        z-index: 2;
+        padding: 2.3rem 2rem 4.7rem 3rem;
+        @media (min-width: 768px) {
+            min-height: 30.9rem; // УКАЗЫВАТЬ МИНИМАЛЬНУЮ ВЫСОТУ НЕОБХОДИМО КОГДА ДВА РАЗНЫХ СЛАЙДЕРА НУЖНЫ ОДНОЙ ВЫСОТЫ
+            padding: 2.3rem 2rem 5.7rem 2rem;
+        }
+    }
+    &__content {
+        max-width: 29.8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        color: gray;
+        font-style: normal;
+        font-feature-settings: "pnum" on, "lnum" on;
+        margin: 0 auto;
+        align-self: center;
+        display: table-cell; // ЕСЛИ СОДЕРЖИМОЕ В ДОПАЛНИТЕЛЬНОЙ ОБЕРТКЕ И ЕГО НАДО РАСТЯНУТЬ НА ВСЮ ВЫСОТУ СЛАЙДА, ЭТО ПОМОЖЕТ РАСТЯНУТЬ
+    }
+    &__wrapper {
+        max-width: 59.6rem;
+    }
+    h3 {
+        // ЭТО МОЖНО УДАЛИТЬ, СТИЛИ ДЛЯ СОДЕРЖИМОГО СЛАЙДА
+        margin-bottom: 1.4rem;
+        font-size: 1.8rem;
+        line-height: 2.9rem;
+        color: #000;
+        @media (min-width: 1320px) {
+            font-size: 2.4rem;
+            line-height: 140%;
+        }
+    }
+    p {
+        // ЭТО МОЖНО УДАЛИТЬ, СТИЛИ ДЛЯ СОДЕРЖИМОГО СЛАЙДА
+        color: #000;
+        font-weight: normal;
+        font-size: 1.4rem;
+        line-height: 160%;
+    }
+}
+
+.staff-button__box {
+    // СТИЛИ ДЛЯ КОНТЕЙНЕРА КНОПОК И ДЛЯ КНОПОК
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    .staff-button-next,
+    .staff-button-prev {
+        top: 0;
+        left: 0;
+        outline: none;
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+        &::after {
+            position: absolute;
+            font-family: "fontello";
+            z-index: 2;
+            top: 0;
+            left: 1.5rem;
+            content: "";
+            font-size: 2.4rem;
+            width: 5px;
+            height: 10px;
+        }
+    }
+    .staff-button-prev {
+        &::after {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            content: "";
+        }
+    }
+    .staff-button-next {
+        &::after {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            transform: rotate(180deg) translate(-135%, -190%);
+            content: "";
+        }
+    }
+    .staff-button-next {
+        margin-right: 0.86rem;
+    }
+}
+
+.staff-swiper__slide {
+    border-right: none;
+    display: table; // БЕЗ ЭТОГО НЕ СРАБОТАЕТ (display: table-cell; // ЕСЛИ СОДЕРЖИМОЕ В ДОПАЛНИТЕЛЬНОЙ ОБЕРТКЕ И ЕГО НАДО РАСТЯНУТЬ НА ВСЮ ВЫСОТУ СЛАЙДА, ЭТО ПОМОЖЕТ РАСТЯНУТЬ)
+    @media (min-width: 768px) {
+        position: relative;
+        &::before {
+            // ПОЛОСКА МЕЖДУ ДВУХ СЛАЙДОВ ЕСЛИ ТАКАЯ НУЖНА
+            content: "";
+            position: absolute;
+            border-right: 1px solid rgba(113, 113, 126, 0.5);
+            top: 0;
+            left: 100%;
+            transform: rotate(180deg) translate(0%, -7rem);
+            height: 12.2rem;
+        }
+    }
+}

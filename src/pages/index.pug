@@ -6,38 +6,6 @@ block variables
     - let h1 = 'Главный заголовок';
 
 block content
-    .wrapper
-        header.header
-            .header__container 
-                include ./../components/bem-blocks/nav/nav.pug
-        section.main
-            .swiper-slider
-                .swiper-cnt
-                    include ./../components/bem-blocks/swiper-slider/swiper-slider.pug
-            .container
-                .template-page
-                    include ./../components/bem-blocks/navbar/navbar.pug
-                    
-                    .wrap-post-entry
-                        include ./../components/bem-blocks/main/article.pug
-                        include ./../components/bem-blocks/main/article.pug
-                        include ./../components/bem-blocks/main/article.pug
-                        include ./../components/bem-blocks/main/article.pug
-                        include ./../components/bem-blocks/main/article.pug
-                        include ./../components/bem-blocks/main/article.pug
-                        include ./../components/bem-blocks/main/article.pug
-                        include ./../components/bem-blocks/main/article.pug
-                        include ./../components/bem-blocks/main/article.pug
-                        include ./../components/bem-blocks/main/article.pug
-                        include ./../components/bem-blocks/main/article.pug
-                        include ./../components/bem-blocks/main/article.pug
-                        include ./../components/bem-blocks/main/article.pug
-                        include ./../components/bem-blocks/main/article.pug
-                        include ./../components/bem-blocks/main/article.pug
-                    .pagination 
-                        ul 
-                            li.active: span  1
-                            li: a(href="#")  2
-                        span Страница 1 из 2
-        include ./../components/bem-blocks/scroll/scroll.pug
-        include ./../components/sections/footer/footer.pug
+    .container
+        include ./../components/bem-blocks/slider-staff/slider-staff.pug
+        include ./../components/sections/questions/questions.pug
