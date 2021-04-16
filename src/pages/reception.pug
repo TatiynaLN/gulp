@@ -1,0 +1,15 @@
+extends ./../layouts/main
+
+block variables
+    - let pageTitle = 'Правила записи на первичный приём';
+
+block content
+    .wrapper
+        include ./../components/sections/header/header.pug
+        section.banner-page
+            .container 
+                .banner-page__block.banner-page__block-center
+                    h1.main__title Как записаться в Центр наркологии и психотерапии «Генезис»
+        include ./../components/sections/reception/reception.pug
+        include ./../components/sections/form-down/form-down.pug
+        include ./../components/sections/footer/footer.pug

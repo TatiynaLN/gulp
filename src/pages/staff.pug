@@ -1,0 +1,12 @@
+extends ./../layouts/main
+
+block variables
+    - let pageTitle = 'Сотрудники';
+
+block content
+    .wrapper
+        include ./../components/sections/header/header.pug
+        include ./../components/sections/banner-page/banner-page.pug
+        include ./../components/sections/specialists-staff/specialists-staff.pug
+        include ./../components/sections/form-down/form-down.pug
+        include ./../components/sections/footer/footer.pug

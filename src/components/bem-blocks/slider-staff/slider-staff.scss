@@ -1,0 +1,181 @@
+.slider-staff {
+    width: 100%;
+    padding-top: 5rem;
+    @media (min-width: 1320px) {
+        padding-top: 10rem;
+    }
+    &__block {
+        //для слайдера во флексовом блоке
+        min-width: 0;
+        @media (min-width: 1320px) {
+            width: 100%;
+            min-width: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .card__title {
+            margin-bottom: 1.5rem;
+            @media (min-width: 1320px) {
+                margin-bottom: 3.1rem;
+            }
+        }
+    }
+}
+.staff-swiper.swiper-container {
+    z-index: -1;
+    margin-bottom: 0;
+}
+.staff-swiper {
+    background: #ffffff;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 59.6rem;
+    border: 1px solid #f2f2f2;
+
+    &__slide {
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        box-sizing: border-box;
+        // border: 1px solid rgba(113, 113, 126, 0.6);
+        border-left: none;
+        text-align: left;
+        z-index: 2;
+        padding: 2.3rem 2rem 4.7rem 3rem;
+        @media (min-width: 768px) {
+            min-height: 30.9rem;
+            padding: 2.3rem 2rem 5.7rem 2rem;
+        }
+    }
+    &__content {
+        max-width: 29.8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        color: $gray2;
+        font-style: normal;
+        font-feature-settings: "pnum" on, "lnum" on;
+        margin: 0 auto;
+        align-self: center;
+        display: table-cell;
+    }
+    &__wrapper {
+        max-width: 59.6rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    h3 {
+        margin-bottom: 1.4rem;
+        font-size: 1.8rem;
+        line-height: 2.9rem;
+        @include Raleway-Bold();
+        @media (min-width: 1320px) {
+            font-size: 2.4rem;
+            line-height: 140%;
+        }
+    }
+    p {
+        font-weight: normal;
+        font-size: 1.4rem;
+        line-height: 160%;
+    }
+}
+.staff-button__box {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-2rem);
+    z-index: 2;
+    .staff-button-next,
+    .staff-button-prev {
+        top: 0;
+        left: 0;
+        background-color: $blue;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        outline: none;
+        position: relative;
+        transition: transform 0.3s linear;
+        z-index: 1;
+        cursor: pointer;
+        &::after {
+            position: absolute;
+            z-index: 2;
+            top: 1.8rem;
+            left: 1.5rem;
+            transform: rotate(180deg);
+            content: url(../img/icons/slider-arrow.svg);
+            width: 1rem;
+            height: 1rem;
+        }
+        &:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s linear;
+        }
+    }
+    .staff-button-prev {
+        &::after {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            transform: translate(5%, 100%);
+            content: url(../img/icons/slider-arrow.svg);
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+    .staff-button-next {
+        &::after {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            transform: rotate(180deg) translate(-135%, -190%);
+            content: url(../img/icons/slider-arrow.svg);
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+    .staff-button-next {
+        margin-right: 0.86rem;
+    }
+}
+
+.staff-swiper__slide {
+    border-right: none;
+    display: table;
+    @media (min-width: 768px) {
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            border-right: 1px solid rgba(113, 113, 126, 0.5);
+            top: 0;
+            left: 100%;
+            transform: rotate(180deg) translate(0%, -7rem);
+            height: 12.2rem;
+        }
+    }
+}
+.swiper-wrapper.staff-swiper__wrapper {
+    z-index: -1;
+}
+.swiper-container {
+    margin-bottom: 2rem;
+}
+
+.slider-staff2 {
+    .staff-swiper {
+        &__slide {
+            @media (min-width: 768px) {
+                min-height: 25.9rem;
+                padding: 2.3rem 2rem 5.7rem 3rem;
+            }
+        }
+    }
+}
